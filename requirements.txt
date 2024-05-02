@@ -1,0 +1,4 @@
+django
+django-filter
+yfinance
+-e git+https://github.com/anurag3753/tradewise#egg=tradewise

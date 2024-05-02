@@ -1,0 +1,22 @@
+<!-- templates/signals/filter.html -->
+<form method="get">
+    <div class="form-group">
+        <label for="strategy-filter">Select Strategy:</label>
+        <select class="form-control" id="strategy-filter" name="strategy">
+            <option value="">All Strategies</option>
+            <option value="v20">V20 Strategy</option>
+            <option value="ma">Moving Average Strategy</option>
+            <!-- Add more options as needed -->
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="universe-filter">Select Universe:</label>
+        <select class="form-control" id="universe-filter" name="universe">
+            <option value="">All Universes</option>
+            <option value="v40">Universe 1 (v40.txt)</option>
+            <option value="v40next">Universe 2 (v40next.txt)</option>
+            <!-- Add more options as needed -->
+        </select>
+    </div>
+    <button type="submit" class="btn btn-primary">Filter</button>
+</form>
