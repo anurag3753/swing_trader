@@ -1,0 +1,14 @@
+{
+    "builds": [
+      {
+        "src": "swing_trader/wsgi.py",
+        "use": "@vercel/python"
+      }
+    ],
+    "routes": [
+      {
+        "src": "/(.*)",
+        "dest": "swing_trader/wsgi.py"
+      }
+    ]
+}
