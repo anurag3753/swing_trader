@@ -4,8 +4,8 @@
         <label for="strategy-filter">Select Strategy:</label>
         <select class="form-control" id="strategy-filter" name="strategy">
             <option value="">All Strategies</option>
-            <option value="v20">V20 Strategy</option>
-            <option value="ma">Moving Average Strategy</option>
+            <option value="v20" {% if request.GET.strategy == 'v20' %}selected{% endif %}>V20 Strategy</option>
+            <!-- <option value="ma">Moving Average Strategy</option> -->
             <!-- Add more options as needed -->
         </select>
     </div>
@@ -13,8 +13,9 @@
         <label for="universe-filter">Select Universe:</label>
         <select class="form-control" id="universe-filter" name="universe">
             <option value="">All Universes</option>
-            <option value="v40">Universe 1 (v40.txt)</option>
-            <option value="v40next">Universe 2 (v40next.txt)</option>
+            <option value="v40" {% if request.GET.universe == 'v40' %}selected{% endif %}>v40</option>
+            <option value="v40next" {% if request.GET.universe == 'v40next' %}selected{% endif %}>v40next</option>
+            <option value="v200" {% if request.GET.universe == 'v200' %}selected{% endif %}>v200</option>
             <!-- Add more options as needed -->
         </select>
     </div>
