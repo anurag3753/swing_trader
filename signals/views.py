@@ -11,5 +11,14 @@ class SignalListView(FilterView):
 
     def get_queryset(self):
         queryset = super().get_queryset()
-        # Optionally, you can perform additional filtering or ordering here
+        # Get the query parameters
+        strategy = self.request.GET.get('strategy')
+        universe = self.request.GET.get('universe')
+        
+        # Optionally, perform additional filtering based on the query parameters
+        if strategy:
+            queryset = queryset.filter(strategy=strategy)
+        if universe:
+            queryset = queryset.filter(universe=universe)
+
         return queryset
