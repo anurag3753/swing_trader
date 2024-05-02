@@ -8,15 +8,15 @@ import json
 
 universe_strategies = {
     "v40": [
-        {"name": "V20", "args": {"num_days": 30}},  # Example: Strategy name and its arguments
+        {"name": "v20", "args": {"num_days": 30}},  # Example: Strategy name and its arguments
     ],
     "v40next": [
-        {"name": "V20", "args": {"num_days": 20}},  # Another example
+        {"name": "v20", "args": {"num_days": 20}},  # Another example
         # {"name": "MAStrategy", "args": {"window_size": 50}},
     ],
-    # "v200": [
-    #     {"name": "V20", "args": {"num_days": 30}},
-    # ]
+    "v200": [
+        {"name": "v20", "args": {"num_days": 30}},
+    ]
     # Add more mappings as needed
 }
 
@@ -62,34 +62,34 @@ class StrategyProcessor:
 
     def apply_strategies(self):
         signals = []
-        for universe, strategies in universe_strategies.items():
-            for strategy_info in strategies:
-                strategy_name = strategy_info["name"]
-                strategy_args = strategy_info["args"]
+        strategies = universe_strategies[self.category]
+        for strategy_info in strategies:
+            strategy_name = strategy_info["name"]
+            strategy_args = strategy_info["args"]
 
-                strategy_class = self.get_strategy_class(strategy_name)
+            strategy_class = self.get_strategy_class(strategy_name)
 
-                # Dynamically call the strategy method based on strategy name
-                strategy_method = getattr(strategy_class(self.stock_quotes, category=self.category), f"{strategy_name.lower()}_strategy")
-                strategy_results = strategy_method(**strategy_args)
+            # Dynamically call the strategy method based on strategy name
+            strategy_method = getattr(strategy_class(self.stock_quotes, category=self.category), f"{strategy_name.lower()}_strategy")
+            strategy_results = strategy_method(**strategy_args)
 
-                for symbol, results in strategy_results.items():
-                    for result in results:
-                        signals.append({
-                            "symbol": symbol,
-                            "date": result["date"],
-                            "buy_price": result["buy"],
-                            "sell_price": result["sell"],
-                            "expected_gain": result["expected_gain"],
-                            "strategy": strategy_name,
-                            "universe": universe
-                        })
+            for symbol, results in strategy_results.items():
+                for result in results:
+                    signals.append({
+                        "symbol": symbol,
+                        "date": result["date"],
+                        "buy_price": result["buy"],
+                        "sell_price": result["sell"],
+                        "expected_gain": result["expected_gain"],
+                        "strategy": strategy_name,
+                        "universe": self.category
+                    })
 
         return signals
 
     def get_strategy_class(self, strategy_name):
         # Implement logic to get the strategy class based on the name
-        if strategy_name == "V20":
+        if strategy_name == "v20":
             return V20Strategy
         # elif strategy_name == "AnotherStrategy":
         #     return AnotherStrategy
