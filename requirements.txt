@@ -1,4 +1,5 @@
 django
 django-filter
 yfinance
+schedule
 -e git+https://github.com/anurag3753/tradewise#egg=tradewise
