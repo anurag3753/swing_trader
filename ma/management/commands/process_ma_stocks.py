@@ -39,6 +39,7 @@ class StockProcessor:
 
         # Filtered Signals
         filter_signals = self.filter_signals(signals)
+        print('signals: \n', filter_signals)
 
         # Formatted Signals
         formatted_signals = self.formatted_signals(filter_signals)
@@ -49,7 +50,6 @@ class StockProcessor:
         # Read the list of stocks of interest from interest.txt
         with open('interest_ma.txt', 'r') as f:
             interested_stocks = f.read().splitlines()
-        print('interested_stocks: \n', interested_stocks)
 
         filtered_signals = {}
         for stock, actions in signals.items():
