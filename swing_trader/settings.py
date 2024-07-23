@@ -32,6 +32,7 @@ ALLOWED_HOSTS = ['anurag3753.pythonanywhere.com','.vercel.app', '127.0.0.1']
 
 INSTALLED_APPS = [
     "signals",
+    "ma",
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
