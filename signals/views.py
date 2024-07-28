@@ -2,6 +2,8 @@ from django.shortcuts import render
 from django_filters.views import FilterView
 from .models import Signal
 from .filters import SignalFilter
+from django.db.models import F, Value, Subquery, OuterRef
+from django.db.models.functions import Concat
 
 class SignalListView(FilterView):
     model = Signal
@@ -20,5 +22,17 @@ class SignalListView(FilterView):
             queryset = queryset.filter(strategy=strategy)
         if universe:
             queryset = queryset.filter(universe=universe)
+
+        # Create a subquery to filter out duplicates
+        unique_signals_subquery = Signal.objects.filter(
+            symbol=OuterRef('symbol'),
+            date=OuterRef('date'),
+            buy_price=OuterRef('buy_price'),
+            sell_price=OuterRef('sell_price')
+        ).values('pk')[:1]
+
+        queryset = queryset.annotate(
+            unique_signal=Subquery(unique_signals_subquery)
+        ).filter(pk=F('unique_signal'))
 
         return queryset
