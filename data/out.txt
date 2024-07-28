@@ -1,0 +1,292 @@
+Symbols for new list:
+3MINDIA.NS
+ABB.NS
+ABBOTINDIA.NS
+ACE.NS
+nan
+ABCAPITAL.NS
+AHLUCONT.NS
+AIAENG.NS
+AJANTPHARM.NS
+AKU1.MU
+ANANDRATHI.NS
+ANDHRAPAP.NS
+APARINDS.NS
+ACI.NS
+ASIANPAINT.NS
+ASTRAL.NS
+AUBANK.NS
+nan
+nan
+nan
+AXISBANK.NS
+BAJAJ-AUTO.NS
+BAJFINANCE.NS
+BAJAJFINSV.NS
+BAJAJHLDNG.NS
+nan
+BANKBARODA.NS
+MAHABANK.NS
+BASF.NS
+BAYERCROP.NS
+nan
+nan
+BERGEPAINT.NS
+nan
+BEL.NS
+nan
+nan
+BLS.NS
+nan
+nan
+BCG.NS
+CDSL.NS
+CAMS.NS
+CANBK.NS
+CAPLIPOINT.NS
+nan
+CASTROLIND.NS
+CERA.NS
+nan
+CHOLAHLDNG.NS
+CHOLAFIN.NS
+nan
+nan
+CLEAN.NS
+CMSINFO.NS
+COALINDIA.NS
+nan
+nan
+COLPAL.NS
+CONCORDBIO.NS
+COROMANDEL.NS
+CREDITACC.NS
+CRISIL.NS
+CUMMINSIND.NS
+CYIENT.NS
+nan
+DABUR.NS
+DEEPAKNTR.NS
+DHANUKA.NS
+nan
+DRREDDY.NS
+ECLERX.NS
+EICHERMOT.NS
+nan
+ELECON.NS
+EMAMILTD.NS
+ENGINERSIN.NS
+FEDERALBNK.NS
+FINEORG.NS
+FORCEMOT.NS
+GANESHHOUC.NS
+GRSE.NS
+nan
+GHCL.NS
+GILLETTE.NS
+GLAXO.NS
+GLS.NS
+GPIL.NS
+GODFRYPHLP.NS
+GRINDWELL.NS
+GPPL.NS
+GSPL.NS
+GUJGASLTD.NS
+HUDCO.NS
+HAPPYFORGE.NS
+HAVELLS.NS
+nan
+HCLTECH.NS
+HDFCAMC.NS
+HDFCAMC.NS
+HDFCBANK.NS
+HEROMOTOCO.NS
+HINDUNILVR.NS
+HAL.NS
+IRCTC.NS
+IRFC.NS
+ICICIBANK.NS
+ICICIGI.NS
+nan
+IDFCFIRSTB.NS
+IIFL.NS
+nan
+INDIANB.NS
+IEX.NS
+nan
+IREDA.NS
+IGL.NS
+INDUSINDBK.NS
+INFY.NS
+INGERRAND.NS
+nan
+ITC.NS
+J&KBANK.NS
+nan
+JAMNAAUTO.NS
+nan
+nan
+nan
+nan
+KTKBANK.NS
+KARURVYSYA.NS
+nan
+KEI.NS
+KFINTECH.NS
+KIRLOSBROS.NS
+KOTAKBANK.NS
+KPITTECH.NS
+KSB.NS
+LGBBROSLTD.NS
+L&TFH.NS
+LTTS.NS
+LICHSGFIN.NS
+LICI.NS
+LLOYDSME.NS
+LTIM.NS
+M&MFIN.NS
+nan
+nan
+MGL.NS
+MANINFRA.NS
+MANAPPURAM.NS
+MANKIND.NS
+MARICO.NS
+MARKSANS.NS
+MARUTI.NS
+MAZDOCK.NS
+nan
+MOTHERSON.NS
+nan
+MSTCLTD.NS
+MUTHOOTFIN.NS
+nan
+NBCC.NS
+nan
+NESCO.NS
+NESTLEIND.NS
+NEULANDLAB.NS
+NEWGEN.NS
+nan
+NAM-INDIA.NS
+NAM-INDIA.NS
+NMDC.NS
+OFSS.NS
+nan
+PGHH.NS
+PIIND.NS
+PAGEIND.NS
+PERSISTENT.NS
+PETRONET.NS
+PFIZER.NS
+PIDILITIND.NS
+PNBHOUSING.NS
+nan
+POLYCAB.NS
+nan
+PFC.NS
+nan
+PRAJIND.NS
+nan
+nan
+RATNAMANI.NS
+RECLTD.NS
+RITES.NS
+ROUTE.NS
+SANOFI.NS
+SBICARD.NS
+SCHAEFFLER.NS
+SESHAPAPER.NS
+nan
+SHARDAMOTR.NS
+nan
+SHRIRAMFIN.NS
+SIEMENS.NS
+SKFINDIA.NS
+SONACOMS.NS
+SOUTHBANK.NS
+SBIN.NS
+nan
+SUMICHEM.NS
+SUNTV.NS
+SUNDARMFIN.NS
+SUPREMEINF.NS
+SPLPETRO.NS
+		Zydus Lifesci.
+		Zydus Lifesci.
+		Zydus Lifesci.
+		Zydus Lifesci.
+		Zydus Lifesci.
+		Zydus Lifesci.
+		Zydus Lifesci.
+		Zydus Lifesci.
+		Zydus Lifesci.
+		Zydus Lifesci.
+		Zydus Lifesci.
+		Zydus Lifesci.
+		Zydus Lifesci.
+		Zydus Lifesci.
+		Zydus Lifesci.
+		Zydus Lifesci.
+		Zydus Lifesci.
+		Zydus Lifesci.
+		Zydus Lifesci.
+		Zydus Lifesci.
+		Zydus Lifesci.
+		Zydus Lifesci.
+		Zydus Lifesci.
+		Zydus Lifesci.
+		Zydus Lifesci.
+
+Items in old list but not in new list:
+Affle India
+Amara Raja Ener.
+Avenue Super.
+Balaji Amines
+Century Plyboard
+CG Power & Indu.
+Cons. Finvest
+Datamatics Glob.
+Dixon Technolog.
+EID Parry
+G M D C
+G N F C
+Galaxy Surfact.
+General Insuranc
+Hind.Oil Explor.
+ION Exchange
+J B Chem & Pharm
+Jindal Poly Inve
+K P R Mill Ltd
+KRBL
+Lak. Mach. Works
+Linde India
+Maithan Alloys
+Nucleus Soft.
+Savita Oil Tech
+Shriram Pistons
+Siyaram Silk
+Surya Roshni
+Suven Pharma
+Suzlon Energy
+T N Merc. Bank
+Tanla Platforms
+Tata Elxsi
+Tata Technolog.
+TCS
+Timken India
+Transport Corp.
+Triveni Turbine
+Tube Investments
+Ujjivan Fin.Ser.
+Ujjivan Small
+Union Bank (I)
+United Spirits
+Usha Martin
+UTI AMC
+Vesuvius India
+Vinati Organics
+Volt.Transform.
+VST Industries
+West Coast Paper
+Zensar Tech.
