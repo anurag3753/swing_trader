@@ -49,11 +49,11 @@ class SignalListView(FilterView):
             sell_price=OuterRef('sell_price')
         ).values('pk')[:1]
 
-        # Annotate with a flag for new stocks (added within the last 10 days)
+        # Annotate with a flag for new stocks (added within the last 7 days)
         queryset = queryset.annotate(
             unique_signal=Subquery(unique_signals_subquery),
             is_new=Case(
-                When(added_date__gte=today - timedelta(days=10), then=True),  # Check if added in the last 10 days
+                When(added_date__gte=today - timedelta(days=7), then=True),  # Check if added in the last 7 days
                 default=False,
                 output_field=BooleanField()
             )
