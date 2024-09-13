@@ -26,18 +26,6 @@ class SignalListView(FilterView):
         if universe:
             queryset = queryset.filter(universe=universe)
 
-        # Create a subquery to filter out duplicates
-        unique_signals_subquery = Signal.objects.filter(
-            symbol=OuterRef('symbol'),
-            date=OuterRef('date'),
-            buy_price=OuterRef('buy_price'),
-            sell_price=OuterRef('sell_price')
-        ).values('pk')[:1]
-
-        queryset = queryset.annotate(
-            unique_signal=Subquery(unique_signals_subquery)
-        ).filter(pk=F('unique_signal'))
-
         # Get today's date
         today = timezone.now().date()
 
