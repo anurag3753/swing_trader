@@ -1,5 +1,6 @@
 # signals/models.py
 from django.db import models
+from django.utils import timezone
 
 class Signal(models.Model):
     symbol = models.CharField(max_length=20)
@@ -9,6 +10,7 @@ class Signal(models.Model):
     expected_gain = models.DecimalField(max_digits=5, decimal_places=2)
     strategy = models.CharField(max_length=100)  # Adjust max_length as needed
     universe = models.CharField(max_length=100)  # Add universe field
+    added_date = models.DateField(default=timezone.now)  # Date when the record is added
 
     def __str__(self):
         return f"{self.symbol} - Buy: {self.buy_price}, Sell: {self.sell_price}, Gain: {self.expected_gain}%"
