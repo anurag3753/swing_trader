@@ -33,6 +33,7 @@
               <th scope="col">Date</th>
               <th scope="col">Action</th>
               <th scope="col">Price</th>
+              <th scope="col">Price Change (%)</th>
             </tr>
           </thead>
           <tbody>
@@ -42,6 +43,7 @@
               <td>{{ signal.date }}</td>
               <td>{{ signal.action }}</td>
               <td>{{ signal.price }}</td>
+              <td>{{ signal.price_change_percentage }}</td>
             </tr>
             {% endfor %}
           </tbody>
