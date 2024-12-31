@@ -31,6 +31,7 @@
                         <th scope="col">Buy Price</th>
                         <th scope="col">Sell Price</th>
                         <th scope="col">Expected Gain(%)</th>
+                        <th scope="col">Price Change (%)</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -41,6 +42,7 @@
                         <td>{{ signal.buy_price }}</td>
                         <td>{{ signal.sell_price }}</td>
                         <td>{{ signal.expected_gain }}</td>
+                        <td>{{ signal.price_change_percentage }}%</td>
                     </tr>
                     {% endfor %}
                 </tbody>
