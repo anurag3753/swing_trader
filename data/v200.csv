@@ -1,239 +1,243 @@
-old,old_list,new_list,
-3MINDIA.NS,	3M India,	3M India,
-ABB.NS,	A B B,	A B B,
-ABBOTINDIA.NS,	Abbott India,	Abbott India,
-ACE.NS,	Action Const.Eq.,	Action Const.Eq.,
-ABCAPITAL.NS,	Aditya Birla Cap,	Aditya AMC,
-AFFLE.NS,	Affle India,	Aditya Birla Cap,
-AHLUCONT.NS,	Ahluwalia Contr.,	Ahluwalia Contr.,
-AIAENG.NS,	AIA Engineering,	AIA Engineering,
-AJANTPHARM.NS,	Ajanta Pharma,	Ajanta Pharma,
-AKU1.MU,	Akzo Nobel,	Akzo Nobel,
-ARE&M.NS,	Amara Raja Ener.,	Anand Rathi Wea.,
-ANANDRATHI.NS,	Anand Rathi Wea.,	Andhra Paper,
-ANDHRAPAP.NS,	Andhra Paper,	Apar Inds.,
-APARINDS.NS,	Apar Inds.,	Archean Chemical,
-ACI.NS,	Archean Chemical,	Asian Paints,
-ASIANPAINT.NS,	Asian Paints,	Astral,
-ASTRAL.NS,	Astral,	AU Small Finance,
-AUBANK.NS,	AU Small Finance,	Authum Invest,
-DMART.NS,	Avenue Super.,	Authum Invest,
-AXISBANK.NS,	Axis Bank,	Avanti Feeds,
-BAJAJ-AUTO.NS,	Bajaj Auto,	Axis Bank,
-BAJFINANCE.NS,	Bajaj Finance,	Bajaj Auto,
-BAJAJFINSV.NS,	Bajaj Finserv,	Bajaj Finance,
-BAJAJHLDNG.NS,	Bajaj Holdings,	Bajaj Finserv,
-BALAMINES.NS,	Balaji Amines,	Bajaj Holdings,
-BANKBARODA.NS,	Bank of Baroda,	Bandhan Bank,
-MAHABANK.NS,	Bank of Maha,	Bank of Baroda,
-BASF.NS,	BASF India,	Bank of Maha,
-BAYERCROP.NS,	Bayer Crop Sci.,	BASF India,
-BERGEPAINT.NS,	Berger Paints,	Bayer Crop Sci.,
-BEL.NS,	Bharat Electron,	Bengal & Assam,
-BLS.NS,	BLS Internat.,	Bengal & Assam,
-BCG.NS,	Brightcom Group,	Berger Paints,
-CDSL.NS,	C D S L,	Bharat Dynamics,
-CAMS.NS,	Cams Services,	Bharat Electron,
-CANBK.NS,	Canara Bank,	Bikaji Foods,
-CAPLIPOINT.NS,	Caplin Point Lab,	Birlasoft Ltd,
-CASTROLIND.NS,	Castrol India,	BLS Internat.,
-CENTURYPLY.NS,	Century Plyboard,	Blue Star,
-CERA.NS,	Cera Sanitary.,	Bosch,
-CGPOWER.NS,	CG Power & Indu.,	Brightcom Group,
-CHOLAHLDNG.NS,	Chola Financial,	C D S L,
-CHOLAFIN.NS,	Cholaman.Inv.&Fn,	Cams Services,
-CLEAN.NS,	Clean Science,	Canara Bank,
-CMSINFO.NS,	CMS Info Systems,	Caplin Point Lab,
-COALINDIA.NS,	Coal India,	Carborundum Uni.,
-COLPAL.NS,	Colgate-Palmoliv,	Castrol India,
-CONCORDBIO.NS,	Concord Biotech,	Cera Sanitary.,
-CONSOFINVT.NS,	Cons. Finvest,	CG Power & Ind,
-COROMANDEL.NS,	Coromandel Inter,	Chola Financial,
-CREDITACC.NS,	CreditAcc. Gram.,	Cholaman.Inv.&Fn,
-CRISIL.NS,	CRISIL,	Cipla,
-CUMMINSIND.NS,	Cummins India,	City Union Bank,
-CYIENT.NS,	Cyient,	Clean Science,
-DABUR.NS,	Dabur India,	CMS Info Systems,
-DATAMATICS.NS,	Datamatics Glob.,	Coal India,
-DEEPAKNTR.NS,	Deepak Nitrite,	Cochin Shipyard,
-DHANUKA.NS,	Dhanuka Agritech,	Coforge,
-DIXON.NS,	Dixon Technolog.,	Colgate-Palmoliv,
-DRREDDY.NS,	Dr Reddy's Labs,	Concord Biotech,
-ECLERX.NS,	eClerx Services,	Coromandel Inter,
-EICHERMOT.NS,	Eicher Motors,	CreditAcc. Gram.,
-EIDPARRY.NS,	EID Parry,	CRISIL,
-ELECON.NS,	Elecon Engg.Co,	Cummins India,
-EMAMILTD.NS,	Emami,	Cyient,
-ENGINERSIN.NS,	Engineers India,	D B Corp,
-FEDERALBNK.NS,	Federal Bank,	Dabur India,
-FINEORG.NS,	Fine Organic,	Deepak Nitrite,
-FORCEMOT.NS,	Force Motors,	Dhanuka Agritech,
-GMDCLTD.NS,	G M D C,	Dr Lal Pathlabs,
-GNFC.NS,	G N F C,	Dr Reddy's Labs,
-GALAXYSURF.NS,	Galaxy Surfact.,	eClerx Services,
-GANESHHOUC.NS,	Ganesh Housing,	Eicher Motors,
-GRSE.NS,	Garden Reach Sh.,	EIH,
-GICRE.NS,	General Insuranc,	Elecon Engg.Co,
-GHCL.NS,	GHCL,	Emami,
-GILLETTE.NS,	Gillette India,	Engineers India,
-GLAXO.NS,	Glaxosmi. Pharma,	Federal Bank,
-GLS.NS,	Glenmark Life,	Fine Organic,
-GPIL.NS,	Godawari Power,	Force Motors,
-GODFRYPHLP.NS,	Godfrey Phillips,	Ganesh Housing,
-GRINDWELL.NS,	Grindwell Norton,	Garden Reach Sh.,
-GPPL.NS,	Guj Pipavav Port,	Garware Tech.,
-GSPL.NS,	Guj.St.Petronet,	GHCL,
-GUJGASLTD.NS,	Gujarat Gas,	Gillette India,
-HUDCO.NS,	H U D C O,	Glaxosmi. Pharma,
-HAPPYFORGE.NS,	Happy Forgings,	Glenmark Life,
-HAVELLS.NS,	Havells India,	Godawari Power,
-HCLTECH.NS,	HCL Technologies,	Godfrey Phillips,
-HDFCAMC.NS,	HDFC AMC,	Grindwell Norton,
-HDFCBANK.NS,	HDFC Bank,	Guj Pipavav Port,
-HEROMOTOCO.NS,	Hero Motocorp,	Guj.St.Petronet,
-HINDUNILVR.NS,	Hind. Unilever,	Gujarat Gas,
-HAL.NS,	Hind.Aeronautics,	H U D C O,
-HINDOILEXP.NS,	Hind.Oil Explor.,	Happy Forgings,
-IRCTC.NS,	I R C T C,	Havells India,
-IRFC.NS,	I R F C,	HBL Power System,
-ICICIBANK.NS,	ICICI Bank,	HCL Technologies,
-ICICIGI.NS,	ICICI Lombard,	HDFC AMC,
-IDFCFIRSTB.NS,	IDFC First Bank,	HDFC AMC,
-IIFL.NS,	IIFL Finance,	HDFC Bank,
-INDIANB.NS,	Indian Bank,	Hero Motocorp,
-IEX.NS,	Indian Energy Ex,	Hind. Unilever,
-IREDA.NS,	Indian Renewable,	Hind.Aeronautics,
-IGL.NS,	Indraprastha Gas,	I R C T C,
-INDUSINDBK.NS,	IndusInd Bank,	I R F C,
-INFY.NS,	Infosys,	ICICI Bank,
-INGERRAND.NS,	Ingersoll-Rand,	ICICI Lombard,
-IONEXCHANG.NS,	ION Exchange,	IDBI Bank,
-ITC.NS,	ITC,	IDFC First Bank,
-J&KBANK.NS,	J & K Bank,	IIFL Finance,
-JBCHEPHARM.NS,	J B Chem & Pharm,	Indiamart Inter.,
-JAMNAAUTO.NS,	Jamna Auto Inds.,	Indian Bank,
-JPOLYINVST.NS,	Jindal Poly Inve,	Indian Energy Ex,
-KPRMILL.NS,	K P R Mill Ltd,	Indian Metals,
-KTKBANK.NS,	Karnataka Bank,	Indian Renewable,
-KARURVYSYA.NS,	Karur Vysya Bank,	Indraprastha Gas,
-KEI.NS,	KEI Industries,	IndusInd Bank,
-KFINTECH.NS,	KFin Technolog.,	Infosys,
-KIRLOSBROS.NS,	Kirl. Brothers,	Ingersoll-Rand,
-KOTAKBANK.NS,	Kotak Mah. Bank,	Intellect Design,
-KPITTECH.NS,	KPIT Technologi.,	ITC,
-KRBL.NS,	KRBL,	J & K Bank,
-KSB.NS,	KSB,	J B Chemicals &,
-LGBBROSLTD.NS,	L G Balakrishnan,	Jamna Auto Inds.,
-L&TFH.NS,	L&T Finance Ltd,	Jupiter Wagons,
-LTTS.NS,	L&T Technology,	Jyothy Labs,
-LAXMIMACH.NS,	Lak. Mach. Works,	Kajaria Ceramics,
-LICHSGFIN.NS,	LIC Housing Fin.,	Kama Holdings,
-LICI.NS,	Life Insurance,	Karnataka Bank,
-LINDEINDIA.NS,	Linde India,	Karur Vysya Bank,
-LLOYDSME.NS,	Lloyds Metals,	Kaveri Seed Co.,
-LTIM.NS,	LTIMindtree,	KEI Industries,
-M&MFIN.NS,	M & M Fin. Serv.,	KFin Technolog.,
-MGL.NS,	Mahanagar Gas,	Kirl. Brothers,
-MAITHANALL.NS,	Maithan Alloys,	Kotak Mah. Bank,
-MANINFRA.NS,	Man Infra,	KPIT Technologi.,
-MANAPPURAM.NS,	Manappuram Fin.,	KSB,
-MANKIND.NS,	Mankind Pharma,	L G Balakrishnan,
-MARICO.NS,	Marico,	L&T Finance Ltd,
-MARKSANS.NS,	Marksans Pharma,	L&T Technology,
-MARUTI.NS,	Maruti Suzuki,	LIC Housing Fin.,
-MAZDOCK.NS,	Mazagon Dock,	Life Insurance,
-MOTHERSON.NS,	Motherson Wiring,	Lloyds Metals,
-MSTCLTD.NS,	MSTC,	LTIMindtree,
-MUTHOOTFIN.NS,	Muthoot Finance,	M & M Fin. Serv.,
-NBCC.NS,	NBCC,	Mah. Seamless,
-NESCO.NS,	NESCO,	Maha Rashtra Apx,
-NESTLEIND.NS,	Nestle India,	Mahanagar Gas,
-NEULANDLAB.NS,	Neuland Labs.,	Man Infra,
-NEWGEN.NS,	Newgen Software,	Manappuram Fin.,
-NAM-INDIA.NS,	Nippon Life Ind.,	Mankind Pharma,
-NMDC.NS,	NMDC,	Marico,
-NUCLEUS.NS,	Nucleus Soft.,	Marksans Pharma,
-OFSS.NS,	Oracle Fin.Serv.,	Maruti Suzuki,
-PGHH.NS,	P & G Hygiene,	Mazagon Dock,
-PIIND.NS,	P I Industries,	Mishtann Foods,
-PAGEIND.NS,	Page Industries,	Motherson Wiring,
-PERSISTENT.NS,	Persistent Sys,	Mphasis,
-PETRONET.NS,	Petronet LNG,	MSTC,
-PFIZER.NS,	Pfizer,	Muthoot Finance,
-PIDILITIND.NS,	Pidilite Inds.,	Natco Pharma,
-PNBHOUSING.NS,	PNB Housing,	NBCC,
-POLYCAB.NS,	Polycab India,	NCC,
-PFC.NS,	Power Fin.Corpn.,	NESCO,
-PRAJIND.NS,	Praj Industries,	Nestle India,
-RATNAMANI.NS,	Ratnamani Metals,	Neuland Labs.,
-RECLTD.NS,	REC Ltd,	Newgen Software,
-RITES.NS,	Rites,	NIIT Learning,
-ROUTE.NS,	Route Mobile,	Nippon Life Ind.,
-SANOFI.NS,	Sanofi India,	Nippon Life Ind.,
-SOTL.NS,	Savita Oil Tech,	NMDC,
-SBICARD.NS,	SBI Cards,	Oracle Fin.Serv.,
-SCHAEFFLER.NS,	Schaeffler India,	P & G Health Ltd,
-SESHAPAPER.NS,	Seshasayee Paper,	P & G Hygiene,
-SHARDAMOTR.NS,	Sharda Motor,	P I Industries,
-SHRIRAMFIN.NS,	Shriram Finance,	Page Industries,
-SHRIPISTON.NS,	Shriram Pistons,	Persistent Sys,
-SIEMENS.NS,	Siemens,	Petronet LNG,
-SIYSIL.NS,	Siyaram Silk,	Pfizer,
-SKFINDIA.NS,	SKF India,	Pidilite Inds.,
-SONACOMS.NS,	Sona BLW Precis.,	PNB Housing,
-SOUTHBANK.NS,	South Ind.Bank,	Poly Medicure,
-SBIN.NS,	St Bk of India,	Polycab India,
-SUMICHEM.NS,	Sumitomo Chemi.,	Poonawalla Fin,
-SUNTV.NS,	Sun TV Network,	Power Fin.Corpn.,
-SUNDARMFIN.NS,	Sundaram Finance,	Power Mech Proj.,
-SUPREMEINF.NS,	Supreme Inds.,	Praj Industries,
-SPLPETRO.NS,	Supreme Petroch.,	R R Kabel,
-SURYAROSNI.NS,	Surya Roshni,	Railtel Corpn.,
-SUVENPHAR.NS,	Suven Pharma,	Ratnamani Metals,
-SUZLON.NS,	Suzlon Energy,	REC Ltd,
-TMB.NS,	T N Merc. Bank,	Rites,
-TANLA.NS,	Tanla Platforms,	Route Mobile,
-TATAELXSI.NS,	Tata Elxsi,	Sanofi India,
-TATATECH.NS,	Tata Technolog.,	SBI Cards,
-TCS.NS,	TCS,	Schaeffler India,
-TIMKEN.NS,	Timken India,	Seshasayee Paper,
-TCI.NS,	Transport Corp.,	Shakti Pumps,
-TRITURBINE.NS,	Triveni Turbine,	Sharda Motor,
-TIINDIA.NS,	Tube Investments,	Share India Sec.,
-UJJIVAN.NS,	Ujjivan Fin.Ser.,	Shriram Finance,
-UJJIVANSFB.NS,	Ujjivan Small,	Siemens,
-UNIONBANK.NS,	Union Bank (I),	SKF India,
-MCDOWELL-N.NS,	United Spirits,	Sona BLW Precis.,
-UMESLTD.NS,	Usha Martin,	South Ind.Bank,
-UTIAMC.NS,	UTI AMC,	St Bk of India,
-VESUVIUS.NS,	Vesuvius India,	Styrenix Perfor.,
-VINATIORGA.NS,	Vinati Organics,	Sumitomo Chemi.,
-VOLTAMP.NS,	Volt.Transform.,	Sun TV Network,
-VSTIND.NS,	VST Industries,	Sundaram Finance,
-WSTCSTPAPR.NS,	West Coast Paper,	Supreme Inds.,
-ZENSARTECH.NS,	Zensar Tech.,	Supreme Petroch.,
-		Surya Roshni,
-		Suzlon Energy,
-		T N Merc. Bank,
-		Tanla Platforms,
-		Tata Elxsi,
-		Tata Technolog.,
-		TCS,
-		Timken India,
-		Titagarh Rail,
-		Triveni Turbine,
-		Tube Investments,
-		TVS Holdings,
-		Ujjivan Small,
-		Union Bank (I),
-		United Spirits,
-		Usha Martin,
-		UTI AMC,
-		Vesuvius India,
-		Volt.Transform.,
-		VST Industries,
-		West Coast Paper,
-		WPIL,
-		Zensar Tech.,
-		ZF Commercial,
-		Zydus Lifesci.,
+TCS.NS,"	TCS"
+INFY.NS,"	Infosys"
+ITC.NS,"	ITC"
+LICI.NS,"	Life Insurance"
+HINDUNILVR.NS,"	Hind. Unilever"
+HCLTECH.NS,"	HCL Technologies"
+MARUTI.NS,"	Maruti Suzuki"
+HAL.NS,"	Hind.Aeronautics"
+BAJAJ-AUTO.NS,"	Bajaj Auto"
+COALINDIA.NS,"	Coal India"
+SIEMENS.NS,"	Siemens"
+ASIANPAINT.NS,"	Asian Paints"
+BEL.NS,"	Bharat Electron"
+NESTLEIND.NS,"	Nestle India"
+LTIM.NS,"	LTIMindtree"
+PIDILITIND.NS,"	Pidilite Inds."
+HYUNDAI.NS,Hyundai Motor I
+ABB.NS,"	A B B"
+EICHERMOT.NS,"	Eicher Motors"
+CIPLA.NS,Cipla
+MANKIND.NS,Mankind Pharma
+MCDOWELL-N.NS,"	United Spirits"
+DRREDDY.NS,"	Dr Reddy's Labs"
+CGPOWER.NS,"	CG Power & Indu."
+POLYCAB.NS,"	Polycab India"
+OFSS.NS,"	Oracle Fin.Serv."
+HAVELLS.NS,"	Havells India"
+PERSISTENT.NS,"	Persistent Sys"
+BOSCHLTD.NS,Bosch
+ZYDUSLIFE.NS,Zydus Lifesci.
+CUMMINSIND.NS,"	Cummins India"
+HDFCAMC.NS,"	HDFC AMC"
+DABUR.NS,"	Dabur India"
+MAZDOCK.NS,"	Mazagon Dock"
+ICICIGI.NS,"	ICICI Lombard"
+SUZLON.NS,"	Suzlon Energy"
+HEROMOTOCO.NS,"	Hero Motocorp"
+MARICO.NS,"	Marico"
+WAAREEENER.NS,Waaree Energies
+COLPAL.NS,"	Colgate-Palmoliv"
+TIINDIA.NS,"	Tube Investments"
+COFORGE.NS,"	Coforge"
+LLOYDSME.NS,"	Lloyds Metals"
+ABBOTINDIA.NS,"	Abbott India"
+IRCTC.NS,"	I R C T C"
+SUPREMEINF.NS,"	Supreme Inds."
+NMDC.NS,"	NMDC"
+PIIND.NS,"	P I Industries"
+COROMANDEL.NS,"	Coromandel Inter"
+MPHASIS,Mphasis
+PAGEIND.NS,"	Page Industries"
+GVT&D.NS,GE Vernova T&D
+SCHAEFFLER.NS,"	Schaeffler India"
+PETRONET.NS,"	Petronet LNG"
+BERGEPAINT.NS,"	Berger Paints"
+LTTS.NS,"	L&T Technology"
+PGHH.NS,"	P & G Hygiene"
+NAM-INDIA.NS,"	Nippon Life Ind."
+CRISIL.NS,"	CRISIL"
+BLUESTARCO.NS,Blue Star
+ASTRAL.NS,"	Astral"
+TATAELXSI.NS,"	Tata Elxsi"
+KEI.NS,"	KEI Industries"
+BDL.NS,Bharat Dynamics
+APARINDS.NS,"	Apar Inds."
+COCHINSHIP.NS,Cochin Shipyard
+KPITTECH.NS,"	KPIT Technologi."
+GLAXO.NS,"	Glaxosmi. Pharma"
+AJANTPHARM.NS,"	Ajanta Pharma"
+SONACOMS.NS,"	Sona BLW Precis."
+CDSL.NS,C D S L
+TATATECH.NS,Tata Technolog.
+DEEPAKNTR.NS,"	Deepak Nitrite"
+3MINDIA.NS,"	3M India"
+KPRMILL.NS,"	K P R Mill Ltd"
+GUJGASLTD.NS,"	Gujarat Gas"
+AIAENG.NS,"	AIA Engineering"
+JYOTICNC.NS,Jyoti CNC Auto.
+GILLETTE.NS,"	Gillette India"
+AIIL.NS,"	Authum Invest"
+IGL.NS,"	Indraprastha Gas"
+JBCHEPHARM.NS,"	J B Chem & Pharm"
+SUNTV.NS,"	Sun TV Network"
+SUMICHEM.NS,"	Sumitomo Chemi."
+GODFRYPHLP.NS,"	Godfrey Phillips"
+KFINTECH.NS,"	KFin Technolog."
+POLYMED.NS,Poly Medicure
+EMAMILTD.NS,"	Emami"
+"	EIHOTEL.NS","	EIH"
+MOTHERSON.NS,"	Motherson Wiring"
+NATCOPHARM.NS,Natco Pharma
+LALPATHLAB.NS,"	Dr Lal Pathlabs"
+BAYERCROP.NS,"	Bayer Crop Sci."
+CAMS.NS,"	Cams Services"
+NBCC.NS,"	NBCC"
+CARBORUNIV.NS,Carborundum Uni.
+PFIZER.NS,"	Pfizer"
+BASF.NS,"	BASF India"
+ABSLAMC.NS,Aditya AMC
+NEWGEN.NS,"	Newgen Software"
+TRITURBINE.NS,"	Triveni Turbine"
+CONCORDBIO.NS,"	Concord Biotech"
+TIMKEN.NS,"	Timken India"
+ZFCVINDIA.NS,ZF Commercial
+RATNAMANI.NS,"	Ratnamani Metals"
+SKFINDIA.NS,"	SKF India"
+ZENTEC.NS,Zen Technologies
+GRINDWELL.NS,"	Grindwell Norton"
+JWL.NS,Jupiter Wagons
+CYIENT.NS,"	Cyient"
+GSPL.NS,"	Guj.St.Petronet"
+CHAMBLFERT.NS,Chambal Fert.
+BIKAJI.NS,Bikaji Foods
+CASTROLIND.NS,"	Castrol India"
+CAPLIPOINT.NS,"	Caplin Point Lab"
+TBOTEK.NS,"	TBO Tek"
+GRSE.NS,Garden Reach Sh.
+KAJARIACER.NS,"	Kajaria Ceramics"
+IGIL.NS,International Ge
+ACE.NS,Action Const.Eq.
+NEULANDLAB.NS,"	Neuland Labs."
+HBLENGINE.NS,"	HBL Engineering"
+ZENSARTECH.NS,"	Zensar Tech."
+UTIAMC.NS,"	UTI AMC"
+ECLERX.NS,"	eClerx Services"
+ANANDRATHI.NS,"	Anand Rathi Wea."
+CELLO.NS,Cello World
+KIRLOSBROS.NS,"	Kirl. Brothers"
+JAIBALAJI.NS,Jai Balaji Inds.
+RRKABEL.NS,R R Kabel
+IEX.NS,"	Indian Energy Ex"
+EIDPARRY.NS,"	EID Parry"
+AKZOINDIA.NS,"	Akzo Nobel"
+BSOFT.NS,"	Birlasoft Ltd"
+CLEAN.NS,Clean Science
+TITAGARH.NS,Titagarh Rail
+PRAJIND.NS,"	Praj Industries"
+JYOTHYLAB.NS,Jyothy Labs
+INDGN.NS,"	Indegene"
+ELECON.NS,Elecon Engg.Co
+RITES.NS,Rites
+SANOFI.NS,"	Sanofi India"
+FINEORG.NS,"	Fine Organic"
+INDIAMART.NS,Indiamart Inter.
+MARKSANS.NS,"	Marksans Pharma"
+KSB.NS,KSB
+GPIL.NS,"	Godawari Power"
+INGERRAND.NS,"	Ingersoll-Rand"
+INTELLECT.NS,Intellect Design
+RAILTEL.NS,"	Railtel Corpn."
+SHAKTIPUMP.NS,Shakti Pumps
+MGL.NS,"	Mahanagar Gas"
+SPLPETRO.NS,"	Supreme Petroch."
+GLS.NS,"	Glenmark Life"
+UMESLTD.NS,"	Usha Martin"
+KPIGREEN.NS,KPI Green Energy
+GANESHHOUC.NS,Ganesh Housing
+ENGINERSIN.NS,Engineers India
+VOLTAMP.NS,Volt.Transform.
+CERA.NS,"	Cera Sanitary."
+IONEXCHANG.NS,"	ION Exchange"
+MAHSEAMLES.NS,Mah. Seamless
+GARFIBRES.NS,Garware Tech.
+HAPPYFORGE.NS,"	Happy Forgings"
+SHRIPISTON.NS,"	Shriram Pistons"
+MANINFRA.NS,"	Man Infra"
+VESUVIUS.NS,"	Vesuvius India"
+TANLA.NS,"	Tanla Platforms"
+ROUTE.NS,"	Route Mobile"
+AVANTIFEED.NS,Avanti Feeds
+GPPL.NS,"	Guj Pipavav Port"
+PGHL.NS,"	P & G Health Ltd"
+FORCEMOT.NS,"	Force Motors"
+ACI.NS,Archean Chemical
+CMSINFO.NS,CMS Info Systems
+DODLA.NS,Dodla Dairy
+GHCL.NS,"	GHCL"
+AHLUCONT.NS,Ahluwalia Contr.
+DHANUKA.NS,Dhanuka Agritech
+"	NESCO.NS","	NESCO"
+SHAREINDIA.NS,"	Share India Sec."
+SURYAROSNI.NS,Surya Roshni
+NIITMTS.NS,NIIT Learning
+VSTIND.NS,VST Industries
+SHARDAMOTR.NS,Sharda Motor
+DBCORP.NS,D B Corp
+STYRENIX.NS,Styrenix Perfor.
+MSTCLTD.NS,MSTC
+IMFA.NS,Indian Metals
+KSCL.NS,Kaveri Seed Co.
+LGBBROSLTD.NS,L G Balakrishnan
+WSTCSTPAPR.NS,West Coast Paper
+SANDESH.NS,Sandesh
+SBIN.NS,"	St Bk of India"
+HDFCBANK.NS,"	HDFC Bank"
+ICICIBANK.NS,"	ICICI Bank"
+AXISBANK.NS,"	Axis Bank"
+KOTAKBANK.NS,"	Kotak Mah. Bank"
+BANKBARODA.NS,"	Bank of Baroda"
+CANBK.NS,"	Canara Bank"
+UNIONBANK.NS,"	Union Bank (I)"
+INDIANB.NS,"	Indian Bank"
+INDUSINDBK.NS,"	IndusInd Bank"
+IDBI.NS,"	IDBI Bank"
+MAHABANK.NS,"	Bank of Maha"
+FEDERALBNK.NS,"	Federal Bank"
+BANDHANBNK.NS,Bandhan Bank
+IDFCFIRSTB.NS,"	IDFC First Bank"
+J&KBANK.NS,"	J & K Bank"
+AUBANK.NS,"	AU Small Finance"
+KARURVYSYA.NS,"	Karur Vysya Bank"
+KTKBANK.NS,"	Karnataka Bank"
+SOUTHBANK.NS,"	South Ind.Bank"
+UJJIVANSFB.NS,"	Ujjivan Small"
+TMB.NS,T N Merc. Bank
+CUB.NS,"	City Union Bank"
+TVSHLTD.NS,TVS Holdings
+CREDITACC.NS,"	CreditAcc. Gram."
+BENGALASM.BO,Bengal & Assam
+RECLTD.NS,"	REC Ltd"
+BAJFINANCE.NS,"	Bajaj Finance"
+SBICARD.NS,"	SBI Cards"
+PFC.NS,"	Power Fin.Corpn."
+MANAPPURAM.NS,"	Manappuram Fin."
+CHOLAFIN.NS,"	Cholaman.Inv.&Fn"
+CHOLAHLDNG.NS,"	Chola Financial"
+MUTHOOTFIN.NS,"	Muthoot Finance"
+IIFL.NS,"	IIFL Finance"
+IREDA.NS,"	Indian Renewable"
+LICHSGFIN.NS,"	LIC Housing Fin."
+SHRIRAMFIN.NS,"	Shriram Finance"
+BAJAJFINSV.NS,"	Bajaj Finserv"
+BAJAJHFL.NS,Bajaj Housing
+BAJAJHLDNG.NS,"	Bajaj Holdings"
+SUNDARMFIN.NS,"	Sundaram Finance"
+ABCAPITAL.NS,"	Aditya Birla Cap"
+KAMAHOLD.BO,Kama Holdings
+IRFC.NS,"	I R F C"
+HUDCO.NS,"	H U D C O"
+PNBHOUSING.NS,"	PNB Housing"
+L&TFH.NS,"	L&T Finance Ltd"
+M&MFIN.NS,"	M & M Fin. Serv."
+JIOFIN.NS,"	Jio Financial"
