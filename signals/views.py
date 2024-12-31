@@ -2,11 +2,10 @@ from django.shortcuts import render
 from django_filters.views import FilterView
 from .models import Signal
 from .filters import SignalFilter
-from django.db.models import F, Value, Subquery, OuterRef
-from django.db.models.functions import Concat
+from django.db.models import F, Subquery, OuterRef, Case, When, BooleanField
 from django.utils import timezone
-from django.db.models import Case, When, BooleanField
 from datetime import timedelta
+import yfinance as yf
 
 class SignalListView(FilterView):
     model = Signal
@@ -47,7 +46,21 @@ class SignalListView(FilterView):
             )
         ).filter(pk=F('unique_signal'))
 
-        for signal in queryset:
-            print(signal.symbol, signal.added_date, signal.is_new)
-
         return queryset
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        signals = context['signals']
+        
+        # Fetch current market price for each stock signal and calculate percentage change
+        for signal in signals:
+            ticker = yf.Ticker(signal.symbol)
+            try:
+                current_price = round(ticker.history(period="1d")['Close'].iloc[-1], 2)
+                price_change_percentage = round(((current_price - float(signal.buy_price)) / float(signal.buy_price)) * 100, 2)
+                signal.price_change_percentage = price_change_percentage
+            except Exception as e:
+                signal.price_change_percentage = None
+                print(f"Failed to fetch current price for {signal.symbol}: {e}")
+
+        return context
