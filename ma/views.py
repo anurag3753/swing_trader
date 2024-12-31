@@ -3,6 +3,7 @@ from django.db.models import F, Subquery, OuterRef, Case, When, BooleanField
 from django.utils import timezone
 from datetime import timedelta
 from .models import StockSignal
+import yfinance as yf
 
 class StockSignalListView(ListView):
     model = StockSignal
@@ -31,10 +32,21 @@ class StockSignalListView(ListView):
         queryset = queryset.annotate(
             unique_signal=Subquery(unique_signals_subquery),
             is_new=Case(
-                When(date__gte=today - timedelta(days=7), then=True),  # Check if added in the last 3 days
+                When(date__gte=today - timedelta(days=7), then=True),  # Check if added in the last 7 days
                 default=False,
                 output_field=BooleanField()
             )
         ).filter(pk=F('unique_signal'))
+
+        # Fetch current market price for each stock signal and calculate percentage change
+        for signal in queryset:
+            ticker = yf.Ticker(signal.symbol)
+            try:
+                current_price = round(ticker.history(period="1d")['Close'].iloc[-1], 2)
+                price_change_percentage = round(((current_price - float(signal.price)) / float(signal.price)) * 100, 2)
+                signal.price_change_percentage = price_change_percentage
+            except Exception as e:
+                signal.price_change_percentage = None
+                print(f"Failed to fetch current price for {signal.symbol}: {e}")
 
         return queryset
