@@ -49,4 +49,7 @@ class StockSignalListView(ListView):
                 signal.price_change_percentage = None
                 print(f"Failed to fetch current price for {signal.symbol}: {e}")
 
+            # Format the date to YYYY-MM-DD
+            signal.date = signal.date.strftime('%Y-%m-%d')
+
         return queryset
