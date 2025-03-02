@@ -38,16 +38,26 @@ class StockSignalListView(ListView):
             )
         ).filter(pk=F('unique_signal'))
 
+        # Cache for storing fetched prices
+        price_cache = {}
+
         # Fetch current market price for each stock signal and calculate percentage change
         for signal in queryset:
-            ticker = yf.Ticker(signal.symbol)
-            try:
-                current_price = round(ticker.history(period="1d")['Close'].iloc[-1], 2)
+            if signal.symbol not in price_cache:
+                ticker = yf.Ticker(signal.symbol)
+                try:
+                    current_price = round(ticker.history(period="1d")['Close'].iloc[-1], 2)
+                    price_cache[signal.symbol] = current_price
+                except Exception as e:
+                    price_cache[signal.symbol] = None
+                    print(f"Failed to fetch current price for {signal.symbol}: {e}")
+
+            current_price = price_cache[signal.symbol]
+            if current_price is not None:
                 price_change_percentage = round(((current_price - float(signal.price)) / float(signal.price)) * 100, 2)
                 signal.price_change_percentage = price_change_percentage
-            except Exception as e:
+            else:
                 signal.price_change_percentage = None
-                print(f"Failed to fetch current price for {signal.symbol}: {e}")
 
             # Format the date to YYYY-MM-DD
             signal.date = signal.date.strftime('%Y-%m-%d')
