@@ -67,6 +67,10 @@
         // Initialize DataTables
         $("#signals-table").DataTable({
           pageLength: 50,
+          lengthMenu: [
+            [10, 25, 50, -1],
+            [10, 25, 50, "All"],
+          ],
           order: [[1, "asc"]],
           drawCallback: function (settings) {
             // Apply the 'new-stock' class to rows based on data-is-new attribute after DataTables redraw
