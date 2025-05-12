@@ -1,8 +1,11 @@
 appdirs==1.4.4
 asgiref==3.8.1
+backports.zoneinfo==0.2.1
 beautifulsoup4==4.12.3
 certifi==2024.2.2
+cffi==1.17.1
 charset-normalizer==3.3.2
+curl-cffi==0.9.0
 Django==4.2.17
 django-filter==24.2
 frozendict==2.4.2
@@ -13,6 +16,9 @@ multitasking==0.0.11
 numpy==1.24.4
 pandas==2.0.3
 peewee==3.17.3
+platformdirs==4.3.6
+protobuf==5.29.4
+pycparser==2.22
 python-dateutil==2.9.0.post0
 pytz==2024.1
 requests==2.31.0
@@ -20,9 +26,10 @@ schedule==1.2.1
 six==1.16.0
 soupsieve==2.5
 sqlparse==0.5.0
-typing_extensions==4.11.0
+typing-extensions==4.11.0
 tzdata==2024.1
 urllib3==2.2.1
 webencodings==0.5.1
-yfinance==0.2.54
+websockets==13.1
+yfinance==0.2.61
 -e git+https://github.com/anurag3753/tradewise#egg=tradewise
