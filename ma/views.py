@@ -1,5 +1,5 @@
 from django.views.generic import ListView
-from django.db.models import F, Subquery, OuterRef, Case, When, BooleanField
+from django.db.models import F, Subquery, OuterRef, Case, When, BooleanField, Min
 from django.utils import timezone
 from datetime import timedelta
 from .models import StockSignal
@@ -21,28 +21,41 @@ class StockSignalListView(ListView):
         # Get today's date
         today = timezone.now().date()
 
-        # Create a subquery to filter out duplicates
-        unique_signals_subquery = StockSignal.objects.filter(
-            symbol=OuterRef('symbol'),
-            date=OuterRef('date'),
-            price=OuterRef('price'),
-        ).values('pk')[:1]
+        # Get the IDs of records with minimum price for each symbol
+        lowest_price_signal_ids = []
+        unique_symbols = queryset.values('symbol').distinct()
+        
+        for symbol_dict in unique_symbols:
+            symbol = symbol_dict['symbol']
+            lowest_price_signal = queryset.filter(
+                symbol=symbol
+            ).order_by('price').first()
+            if lowest_price_signal:
+                lowest_price_signal_ids.append(lowest_price_signal.pk)
 
-        # Annotate the queryset with the unique signal and a flag for new signals
+        # Filter queryset to only include the lowest price signals
+        queryset = queryset.filter(pk__in=lowest_price_signal_ids)
+
+        # Annotate with a flag for new signals (added within the last 7 days)
         queryset = queryset.annotate(
-            unique_signal=Subquery(unique_signals_subquery),
             is_new=Case(
-                When(date__gte=today - timedelta(days=7), then=True),  # Check if added in the last 7 days
+                When(date__gte=today - timedelta(days=7), then=True),
                 default=False,
                 output_field=BooleanField()
             )
-        ).filter(pk=F('unique_signal'))
+        )
 
+        return queryset
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        signals = context['signals']
+        
         # Cache for storing fetched prices
         price_cache = {}
 
         # Fetch current market price for each stock signal and calculate percentage change
-        for signal in queryset:
+        for signal in signals:
             if signal.symbol not in price_cache:
                 ticker = yf.Ticker(signal.symbol)
                 try:
@@ -62,4 +75,4 @@ class StockSignalListView(ListView):
             # Format the date to YYYY-MM-DD
             signal.date = signal.date.strftime('%Y-%m-%d')
 
-        return queryset
+        return context
