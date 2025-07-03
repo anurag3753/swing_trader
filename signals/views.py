@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django_filters.views import FilterView
 from .models import Signal
 from .filters import SignalFilter
-from django.db.models import F, Subquery, OuterRef, Case, When, BooleanField
+from django.db.models import F, Subquery, OuterRef, Case, When, BooleanField, Max
 from django.utils import timezone
 from datetime import timedelta
 import yfinance as yf
@@ -28,23 +28,29 @@ class SignalListView(FilterView):
         # Get today's date
         today = timezone.now().date()
 
-        # Create a subquery to filter out duplicates
-        unique_signals_subquery = Signal.objects.filter(
-            symbol=OuterRef('symbol'),
-            date=OuterRef('date'),
-            buy_price=OuterRef('buy_price'),
-            sell_price=OuterRef('sell_price')
-        ).values('pk')[:1]
+        # Get the IDs of records with max sell_price for each symbol-buy_price combo
+        max_profit_signal_ids = []
+        symbol_buy_price_combos = queryset.values('symbol', 'buy_price').distinct()
+        
+        for combo in symbol_buy_price_combos:
+            max_signal = queryset.filter(
+                symbol=combo['symbol'],
+                buy_price=combo['buy_price']
+            ).order_by('-sell_price').first()
+            if max_signal:
+                max_profit_signal_ids.append(max_signal.pk)
+
+        # Filter queryset to only include the max profit signals
+        queryset = queryset.filter(pk__in=max_profit_signal_ids)
 
         # Annotate with a flag for new stocks (added within the last 7 days)
         queryset = queryset.annotate(
-            unique_signal=Subquery(unique_signals_subquery),
             is_new=Case(
-                When(added_date__gte=today - timedelta(days=7), then=True),  # Check if added in the last 7 days
+                When(added_date__gte=today - timedelta(days=7), then=True),
                 default=False,
                 output_field=BooleanField()
             )
-        ).filter(pk=F('unique_signal'))
+        )
 
         return queryset
 
