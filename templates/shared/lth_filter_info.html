@@ -1,0 +1,21 @@
+<!-- Filter Information -->
+<div class="alert alert-info mb-3">
+  <strong>Filter Applied:</strong> Showing only stocks that are at least
+  {{ lth_filter_threshold|default:"20" }}% below their Life Time High (LTH) price.
+  {% if total_signals_before_filter and total_signals_after_filter %}
+  <br />
+  <small>
+    Displaying {{ total_signals_after_filter }} signals out of {{ total_signals_before_filter }} total signals. 
+    {% if total_signals_after_filter == 0 %}
+    <br /><em>No stocks currently meet the LTH discount criteria.</em>
+    {% endif %}
+  </small>
+  {% endif %}
+</div>
+
+<!-- Toggle Button for LTH Price Column -->
+<div class="mb-3">
+  <button id="toggleLthColumn" class="btn btn-secondary btn-sm">
+    <i class="fas fa-eye"></i> Show LTH Price Column
+  </button>
+</div>

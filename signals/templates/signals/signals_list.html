@@ -4,28 +4,16 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Signal List</title>
-    <!-- Bootstrap CSS -->
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-    />
-    <!-- DataTables CSS -->
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css"
-    />
-    <style>
-      /* CSS for coloring new stocks */
-      .new-stock {
-        background-color: #d4edda !important; /* Light green background for new stocks */
-      }
-    </style>
+    {% include 'shared/lth_styles.html' %}
   </head>
   <body>
     <div class="container mt-5">
       <h1 class="text-center mb-4">Stock Trading Signals</h1>
+      
       <div class="mb-3">{% include 'signals/filter.html' %}</div>
+      
+      {% include 'shared/lth_filter_info.html' %}
+      
       <div class="table-responsive">
         <table id="signals-table" class="table table-striped table-bordered">
           <thead class="thead-dark">
@@ -36,17 +24,42 @@
               <th scope="col">Sell Price</th>
               <th scope="col">Expected Gain(%)</th>
               <th scope="col">Price Change (%)</th>
+              <th scope="col" class="lth-price-column" style="display: none;">LTH Price</th>
+              <th scope="col">Distance from LTH (%)</th>
             </tr>
           </thead>
           <tbody>
             {% for signal in signals %}
-            <tr data-is-new="{{ signal.is_new }}">
+            <tr 
+              data-is-new="{{ signal.is_new }}"
+              class="{% if signal.distance_from_lth and signal.distance_from_lth <= -40 %}deep-discount{% elif signal.distance_from_lth and signal.distance_from_lth <= -30 %}good-discount{% endif %}"
+            >
               <td>{{ signal.symbol }}</td>
               <td>{{ signal.date }}</td>
               <td>{{ signal.buy_price }}</td>
               <td>{{ signal.sell_price }}</td>
               <td>{{ signal.expected_gain }}</td>
-              <td>{{ signal.price_change_percentage }}%</td>
+              <td>
+                {% if signal.price_change_percentage is not None %}
+                <span
+                  class="{% if signal.price_change_percentage > 0 %}text-success{% elif signal.price_change_percentage < 0 %}text-danger{% endif %}"
+                >
+                  {{ signal.price_change_percentage }}%
+                </span>
+                {% else %} N/A {% endif %}
+              </td>
+              <td class="lth-price-column" style="display: none;">
+                {% if signal.lth_data %}{{ signal.lth_data.lth_price|floatformat:2 }}{% else %}N/A{% endif %}
+              </td>
+              <td>
+                {% if signal.distance_from_lth is not None %}
+                <span
+                  class="{% if signal.distance_from_lth >= -30 %}text-info{% elif signal.distance_from_lth >= -40 %}text-warning{% else %}text-danger{% endif %}"
+                >
+                  {{ signal.distance_from_lth }}%
+                </span>
+                {% else %} N/A {% endif %}
+              </td>
             </tr>
             {% endfor %}
           </tbody>
@@ -54,49 +67,6 @@
       </div>
     </div>
 
-    <!-- jQuery (full version) -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <!-- Bootstrap JS (optional) -->
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <!-- DataTables JavaScript -->
-    <script
-      type="text/javascript"
-      src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"
-    ></script>
-    <!-- Moment.js for date handling -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
-    <!-- DataTables datetime-moment plugin -->
-    <script src="https://cdn.datatables.net/plug-ins/1.11.5/sorting/datetime-moment.js"></script>
-    <!-- DataTables initialization with custom row logic -->
-    <script>
-      $(document).ready(function () {
-        // Initialize the datetime-moment plugin
-        $.fn.dataTable.moment("YYYY-MM-DD");
-
-        // Initialize DataTables
-        $("#signals-table").DataTable({
-          pageLength: 50,
-          lengthMenu: [
-            [10, 25, 50, -1],
-            [10, 25, 50, "All"],
-          ],
-          order: [
-            [1, "desc"], // Sort by Date (column index 1) in descending order
-          ],
-          drawCallback: function (settings) {
-            // Apply the 'new-stock' class to rows based on data-is-new attribute after DataTables redraw
-            $("#signals-table tbody tr").each(function () {
-              var isNew = $(this).data("is-new");
-              if (isNew === true || isNew === "True") {
-                $(this).addClass("new-stock");
-              } else {
-                $(this).removeClass("new-stock");
-              }
-            });
-          },
-        });
-      });
-    </script>
+    {% include 'shared/lth_scripts.html' %}
   </body>
 </html>

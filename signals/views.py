@@ -5,9 +5,10 @@ from .filters import SignalFilter
 from django.db.models import F, Subquery, OuterRef, Case, When, BooleanField, Max
 from django.utils import timezone
 from datetime import timedelta
+from core.mixins import LTHFilterMixin
 import yfinance as yf
 
-class SignalListView(FilterView):
+class SignalListView(LTHFilterMixin, FilterView):
     model = Signal
     template_name = 'signals/signals_list.html'
     filterset_class = SignalFilter
@@ -56,30 +57,13 @@ class SignalListView(FilterView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        signals = context['signals']
+        signals = list(context['signals'])
         
-        # Cache for storing fetched prices
-        price_cache = {}
+        # Use the mixin to add LTH data and filtering
+        filtered_signals = self.add_lth_data_to_signals(signals, price_field='buy_price')
         
-        # Fetch current market price for each stock signal and calculate percentage change
-        for signal in signals:
-            if signal.symbol not in price_cache:
-                ticker = yf.Ticker(signal.symbol)
-                try:
-                    current_price = round(ticker.history(period="1d")['Close'].iloc[-1], 2)
-                    price_cache[signal.symbol] = current_price
-                except Exception as e:
-                    price_cache[signal.symbol] = None
-                    print(f"Failed to fetch current price for {signal.symbol}: {e}")
-
-            current_price = price_cache[signal.symbol]
-            if current_price is not None:
-                price_change_percentage = round(((current_price - float(signal.buy_price)) / float(signal.buy_price)) * 100, 2)
-                signal.price_change_percentage = price_change_percentage
-            else:
-                signal.price_change_percentage = None
-
-            # Format the date to YYYY-MM-DD
-            signal.date = signal.date.strftime('%Y-%m-%d')
+        # Update context with filtered signals and LTH info
+        context['signals'] = filtered_signals
+        context = self.add_lth_context(context, signals, filtered_signals)
 
         return context
