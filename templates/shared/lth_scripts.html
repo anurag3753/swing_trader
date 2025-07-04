@@ -1,0 +1,59 @@
+<!-- Shared JavaScript for LTH functionality -->
+<!-- jQuery (full version) -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<!-- Bootstrap JS (optional) -->
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<!-- DataTables JavaScript -->
+<script type="text/javascript" src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+<!-- Moment.js for date handling -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+<!-- DataTables datetime-moment plugin -->
+<script src="https://cdn.datatables.net/plug-ins/1.11.5/sorting/datetime-moment.js"></script>
+
+<script>
+  $(document).ready(function () {
+    // Initialize the datetime-moment plugin
+    $.fn.dataTable.moment("YYYY-MM-DD");
+
+    // Initialize DataTables
+    var table = $("#signals-table").DataTable({
+      pageLength: 50,
+      lengthMenu: [
+        [10, 25, 50, -1],
+        [10, 25, 50, "All"],
+      ],
+      order: [[1, "desc"]],
+      drawCallback: function (settings) {
+        // Apply the 'new-stock' class to rows based on data-is-new attribute after DataTables redraw
+        $("#signals-table tbody tr").each(function () {
+          var isNew = $(this).data("is-new");
+          if (isNew === true || isNew === "True") {
+            $(this).addClass("new-stock");
+          } else {
+            $(this).removeClass("new-stock");
+          }
+        });
+      },
+    });
+
+    // Toggle LTH Price Column
+    var lthColumnVisible = false;
+    $("#toggleLthColumn").click(function () {
+      if (lthColumnVisible) {
+        // Hide the column
+        $(".lth-price-column").hide();
+        $(this).html('<i class="fas fa-eye"></i> Show LTH Price Column');
+        lthColumnVisible = false;
+      } else {
+        // Show the column
+        $(".lth-price-column").show();
+        $(this).html('<i class="fas fa-eye-slash"></i> Hide LTH Price Column');
+        lthColumnVisible = true;
+      }
+      
+      // Redraw the table to adjust column widths
+      table.columns.adjust().draw();
+    });
+  });
+</script>

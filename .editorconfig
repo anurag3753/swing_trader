@@ -1,0 +1,33 @@
+# EditorConfig is awesome: https://EditorConfig.org
+
+# top-most EditorConfig file
+root = true
+
+# All files
+[*]
+insert_final_newline = false
+trim_trailing_whitespace = false
+
+# HTML files
+[*.html]
+indent_style = space
+indent_size = 2
+insert_final_newline = false
+trim_trailing_whitespace = false
+max_line_length = off
+
+# Django HTML templates
+[*.django-html]
+indent_style = space
+indent_size = 2
+insert_final_newline = false
+trim_trailing_whitespace = false
+max_line_length = off
+
+# Python files
+[*.py]
+indent_style = space
+indent_size = 4
+insert_final_newline = true
+trim_trailing_whitespace = true
+max_line_length = 88

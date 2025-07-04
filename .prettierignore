@@ -1,0 +1,8 @@
+# Ignore HTML template files
+*.html
+*/templates/**/*.html
+ma/templates/**/*.html
+signals/templates/**/*.html
+
+# Ignore Django template files
+*.django-html

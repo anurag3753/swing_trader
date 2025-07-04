@@ -31,6 +31,7 @@ ALLOWED_HOSTS = ['anurag3753.pythonanywhere.com','.vercel.app', '127.0.0.1']
 # Application definition
 
 INSTALLED_APPS = [
+    "core",
     "signals",
     "ma",
     "django.contrib.admin",
@@ -56,7 +57,7 @@ ROOT_URLCONF = "swing_trader.urls"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [],
+        "DIRS": [BASE_DIR / "templates"],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
