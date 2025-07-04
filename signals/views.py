@@ -29,20 +29,35 @@ class SignalListView(LTHFilterMixin, FilterView):
         # Get today's date
         today = timezone.now().date()
 
-        # Get the IDs of records with max sell_price for each symbol-buy_price combo
-        max_profit_signal_ids = []
+        # Step 1: Get the IDs of records with highest sell_price for each symbol-buy_price combo
+        max_sell_price_signal_ids = []
         symbol_buy_price_combos = queryset.values('symbol', 'buy_price').distinct()
         
         for combo in symbol_buy_price_combos:
-            max_signal = queryset.filter(
+            max_sell_price_signal = queryset.filter(
                 symbol=combo['symbol'],
                 buy_price=combo['buy_price']
             ).order_by('-sell_price').first()
-            if max_signal:
-                max_profit_signal_ids.append(max_signal.pk)
+            if max_sell_price_signal:
+                max_sell_price_signal_ids.append(max_sell_price_signal.pk)
 
-        # Filter queryset to only include the max profit signals
-        queryset = queryset.filter(pk__in=max_profit_signal_ids)
+        # Filter queryset to only include the maximum sell price signals
+        queryset = queryset.filter(pk__in=max_sell_price_signal_ids)
+
+        # Step 2: If there are still multiple entries for same symbol-date, pick one with highest sell_price
+        final_signal_ids = []
+        symbol_date_combos = queryset.values('symbol', 'date').distinct()
+        
+        for combo in symbol_date_combos:
+            best_signal = queryset.filter(
+                symbol=combo['symbol'],
+                date=combo['date']
+            ).order_by('-sell_price', '-expected_gain').first()
+            if best_signal:
+                final_signal_ids.append(best_signal.pk)
+
+        # Filter queryset to only include the final selected signals
+        queryset = queryset.filter(pk__in=final_signal_ids)
 
         # Annotate with a flag for new stocks (added within the last 7 days)
         queryset = queryset.annotate(
