@@ -32,7 +32,7 @@ class LTHHelper:
         if lth_price is None:
             return None
         
-        distance_pct = ((float(current_price) - float(lth_price)) / float(lth_price)) * 100
+        distance_pct = ((float(lth_price) - float(current_price)) / float(lth_price)) * 100
         return round(distance_pct, 2)
     
     @staticmethod
