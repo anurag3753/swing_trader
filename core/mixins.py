@@ -61,9 +61,9 @@ class LTHFilterMixin:
                     # Filter: Only include stocks that are at least 20% below LTH
                     if signal.distance_from_lth <= -20.0:
                         filtered_signals.append(signal)
-                    else:
-                        # LTH filtering disabled - include all signals
-                        filtered_signals.append(signal)
+                else:
+                    # LTH filtering disabled - include all signals
+                    filtered_signals.append(signal)
             else:
                 signal.distance_from_lth = None
                 signal.is_near_lth = None
