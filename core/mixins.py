@@ -8,13 +8,14 @@ import yfinance as yf
 class LTHFilterMixin:
     """Mixin to add LTH filtering and data to views."""
     
-    def add_lth_data_to_signals(self, signals, price_field='price'):
+    def add_lth_data_to_signals(self, signals, price_field='price', apply_lth_filter=True):
         """
         Add LTH data and filtering to signals.
         
         Args:
             signals: QuerySet or list of signal objects
             price_field: Field name to use for price comparison (default: 'price')
+            apply_lth_filter: Whether to apply LTH filtering (default: True)
         
         Returns:
             Filtered signals with LTH data attached
@@ -56,12 +57,19 @@ class LTHFilterMixin:
                 signal.distance_from_lth = LTHHelper.calculate_distance_from_lth(current_price, signal.symbol)
                 signal.is_near_lth = LTHHelper.is_near_lth(current_price, signal.symbol, threshold_pct=10.0)
                 
-                # Filter: Only include stocks that are at least 20% below LTH
-                if signal.distance_from_lth <= -20.0:
-                    filtered_signals.append(signal)
+                if apply_lth_filter:
+                    # Filter: Only include stocks that are at least 20% below LTH
+                    if signal.distance_from_lth <= -20.0:
+                        filtered_signals.append(signal)
+                    else:
+                        # LTH filtering disabled - include all signals
+                        filtered_signals.append(signal)
             else:
                 signal.distance_from_lth = None
                 signal.is_near_lth = None
+                if not apply_lth_filter:
+                    # If filtering disabled, include signal even without LTH data
+                    filtered_signals.append(signal)
                 # If no LTH data available, skip this signal
 
             # Format the date to YYYY-MM-DD
@@ -70,9 +78,14 @@ class LTHFilterMixin:
 
         return filtered_signals
 
-    def add_lth_context(self, context, original_signals, filtered_signals):
+    def add_lth_context(self, context, original_signals, filtered_signals, lth_filter_applied=True):
         """Add LTH-related context variables."""
         context['total_signals_before_filter'] = len(original_signals)
         context['total_signals_after_filter'] = len(filtered_signals)
-        context['lth_filter_threshold'] = 20.0  # 20% below LTH threshold
+        if lth_filter_applied:
+            context['lth_filter_threshold'] = 20.0  # 20% below LTH threshold
+            context['lth_filter_disabled'] = False
+        else:
+            context['lth_filter_threshold'] = None  # LTH filtering disabled
+            context['lth_filter_disabled'] = True
         return context
