@@ -52,11 +52,11 @@ class StockSignalListView(LTHFilterMixin, ListView):
         context = super().get_context_data(**kwargs)
         signals = list(context['signals'])
         
-        # Use the mixin to add LTH data and filtering
-        filtered_signals = self.add_lth_data_to_signals(signals, price_field='price')
+        # Use the mixin to add LTH data and filtering (LTH filtering enabled for MA app)
+        filtered_signals = self.add_lth_data_to_signals(signals, price_field='price', apply_lth_filter=True)
         
         # Update context with filtered signals and LTH info
         context['signals'] = filtered_signals
-        context = self.add_lth_context(context, signals, filtered_signals)
+        context = self.add_lth_context(context, signals, filtered_signals, lth_filter_applied=True)
         
         return context
