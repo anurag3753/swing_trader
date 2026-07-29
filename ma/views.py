@@ -1,4 +1,7 @@
+from pathlib import Path
+
 from django.views.generic import ListView
+from django.conf import settings
 from django.db.models import F, Subquery, OuterRef, Case, When, BooleanField, Min
 from django.utils import timezone
 from datetime import timedelta
@@ -7,6 +10,8 @@ from core.mixins import LTHFilterMixin
 import yfinance as yf
 
 class StockSignalListView(LTHFilterMixin, ListView):
+    us = False
+    filter_signals = True
     model = StockSignal
     template_name = 'ma/stock_signals.html'
     context_object_name = 'signals'
@@ -18,6 +23,13 @@ class StockSignalListView(LTHFilterMixin, ListView):
     
     def get_queryset(self):
         queryset = super().get_queryset()
+
+        if getattr(self, 'us', False):
+            us_symbols = self._get_us_symbols()
+            if us_symbols:
+                queryset = queryset.filter(symbol__in=us_symbols)
+            else:
+                queryset = queryset.exclude(symbol__contains='.')
 
         # Get today's date
         today = timezone.now().date()
@@ -48,15 +60,27 @@ class StockSignalListView(LTHFilterMixin, ListView):
 
         return queryset
 
+    def _get_us_symbols(self):
+        us_file = Path(settings.BASE_DIR) / 'us40.txt'
+        if us_file.exists():
+            with open(us_file, 'r', encoding='utf-8') as f:
+                return [line.strip() for line in f if line.strip()]
+        return []
+
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         signals = list(context['signals'])
         
         # Use the mixin to add LTH data and filtering
-        filtered_signals = self.add_lth_data_to_signals(signals, price_field='price')
+        filtered_signals = self.add_lth_data_to_signals(
+            signals,
+            price_field='price',
+            filter_signals=self.filter_signals,
+        )
         
         # Update context with filtered signals and LTH info
         context['signals'] = filtered_signals
         context = self.add_lth_context(context, signals, filtered_signals)
         
+        context['page_title'] = 'US Stock Trading Signals' if getattr(self, 'us', False) else 'Stock Trading Signals'
         return context

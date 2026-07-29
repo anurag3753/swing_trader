@@ -8,16 +8,17 @@ import yfinance as yf
 class LTHFilterMixin:
     """Mixin to add LTH filtering and data to views."""
     
-    def add_lth_data_to_signals(self, signals, price_field='price'):
+    def add_lth_data_to_signals(self, signals, price_field='price', filter_signals=True):
         """
-        Add LTH data and filtering to signals.
+        Add LTH data and optionally filter signals.
         
         Args:
             signals: QuerySet or list of signal objects
             price_field: Field name to use for price comparison (default: 'price')
+            filter_signals: Whether to only return signals at least 20% below LTH.
         
         Returns:
-            Filtered signals with LTH data attached
+            Signals with LTH data attached; filtered if requested.
         """
         # Cache for storing fetched prices
         price_cache = {}
@@ -26,7 +27,6 @@ class LTHFilterMixin:
         symbols = [signal.symbol for signal in signals]
         lth_data = LTHHelper.get_lth_bulk(symbols)
 
-        # Filter signals to only include those at least 20% below LTH
         filtered_signals = []
         
         for signal in signals:
@@ -55,14 +55,19 @@ class LTHFilterMixin:
             if signal.lth_data and current_price is not None:
                 signal.distance_from_lth = LTHHelper.calculate_distance_from_lth(current_price, signal.symbol)
                 signal.is_near_lth = LTHHelper.is_near_lth(current_price, signal.symbol, threshold_pct=10.0)
-                
-                # Filter: Only include stocks that are at least 20% below LTH
-                if signal.distance_from_lth <= -20.0:
+
+                if filter_signals:
+                    # Filter: Only include stocks that are at least 20% below LTH
+                    if signal.distance_from_lth <= -20.0:
+                        filtered_signals.append(signal)
+                else:
                     filtered_signals.append(signal)
             else:
                 signal.distance_from_lth = None
                 signal.is_near_lth = None
-                # If no LTH data available, skip this signal
+                if not filter_signals:
+                    filtered_signals.append(signal)
+                # If no LTH data available and filtering is enabled, skip this signal
 
             # Format the date to YYYY-MM-DD
             if hasattr(signal, 'date'):
