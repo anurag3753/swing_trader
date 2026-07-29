@@ -2,9 +2,11 @@
     "files": [
         {"filename": "v40.txt", "category": "v40"},
         {"filename": "v40next.txt", "category": "v40next"},
-        {"filename": "v200.txt", "category": "v200"}
+        {"filename": "v200.txt", "category": "v200"},
+        {"filename": "us40.txt", "category": "us40"}
     ],
     "ma": [
-        {"filename": "v40.txt", "category": "v40"}
+        {"filename": "v40.txt", "category": "v40"},
+        {"filename": "us40.txt", "category": "us40"}
     ]
 }

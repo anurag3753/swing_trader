@@ -16,6 +16,9 @@ universe_strategies = {
     ],
     "v200": [
         {"name": "v20", "args": {"num_days": 30}},
+    ],
+    "us40": [
+        {"name": "v20", "args": {"num_days": 30}},
     ]
     # Add more mappings as needed
 }

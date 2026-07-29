@@ -1,6 +1,7 @@
 from django.core.management.base import BaseCommand
 from tradewise.quotes import StockReader
 from core.models import StockLTH
+from pathlib import Path
 import datetime
 import json
 
@@ -37,11 +38,27 @@ class Command(BaseCommand):
         if 'ma' in config_data:
             all_universes.extend(config_data['ma'])
 
+        # Ensure US universe is included if the file exists
+        us_entry = {'filename': 'us40.txt', 'category': 'us40'}
+        if not any(entry.get('filename') == 'us40.txt' for entry in all_universes):
+            if Path('us40.txt').exists():
+                all_universes.append(us_entry)
+                self.stdout.write('Added us40.txt to LTH processing because it was missing from stocks_config.json.')
+
+        # Deduplicate duplicate universe entries
+        seen = set()
+        unique_universes = []
+        for entry in all_universes:
+            key = (entry.get('filename'), entry.get('category'))
+            if key not in seen:
+                seen.add(key)
+                unique_universes.append(entry)
+
         total_processed = 0
         total_updated = 0
         total_new = 0
 
-        for file_data in all_universes:
+        for file_data in unique_universes:
             input_filename = file_data['filename']
             category = file_data['category']
             
