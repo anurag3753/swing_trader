@@ -1,0 +1,33 @@
+name: PythonAnywhere Autonomous Agent
+
+on:
+  schedule:
+    - cron: '0 0 1,15 * *'
+  workflow_dispatch:
+
+jobs:
+  execute-agent:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4 # Pinned to v4
+        
+      - name: Set up Python
+        uses: actions/setup-python@v5 # Pinned to v5
+        with:
+          python-version: '3.11'
+          
+      - name: Install Python Package
+        # Pinned to a specific Playwright version for stability, if needed
+        run: pip install playwright
+          
+      - name: Install Browser and System Dependencies
+        run: playwright install --with-deps chromium
+          
+      - name: Deploy Autonomous Agent
+        env:
+          PA_USERNAME: ${{ secrets.PA_USERNAME }}
+          PA_PASSWORD: ${{ secrets.PA_PASSWORD }}
+          USERNAME: ${{ secrets.USERNAME }}
+          PA_RUN: 1
+        run: python agent.py
